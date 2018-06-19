@@ -1,0 +1,12 @@
+.page-header .container {
+    padding-top: 100px;
+    color: #FFFFFF;
+}
+.card img {
+    width: 80%;
+    height: auto;
+    margin-left: 1.5rem;
+}
+.footer{
+    margin-bottom: 1rem;
+}
