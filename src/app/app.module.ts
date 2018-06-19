@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { AddmissionComponent } from './addmission/addmission.component';
+import { AllstudentsComponent } from './allstudents/allstudents.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { AddmissionComponent } from './addmission/addmission.component';
     AppComponent,
     LoginComponent,
     LandingpageComponent,
-    AddmissionComponent
+    AddmissionComponent,
+    AllstudentsComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,8 @@ import { AddmissionComponent } from './addmission/addmission.component';
     {path:'landingpage',component:LandingpageComponent,
     children:[
       {path:"addmission",component:AddmissionComponent},
-      {path:'',pathMatch:'full',redirectTo:'addmission'}
+      {path:'',pathMatch:'full',redirectTo:'addmission'},
+      {path:'allstudents',component:AllstudentsComponent}
     ]
     }
     ])
