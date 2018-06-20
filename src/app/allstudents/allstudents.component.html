@@ -1,30 +1,456 @@
 <div class="container">
-  <h5>Students List</h5>
-   <div class="row">
-       <div class="col-md-4 col-offset-8">
-          <ul>
-            <li>12th Standard</li>
-            <li>11th Standard</li>
-            <li>10th Standard</li>
-            <li>8th Standard</li>
-            <li>7th Standard</li>
-            <li>6th Standard</li>
-            <li>5th Standard</li>
-            <li>4th Standard</li>
-            <li>3rd Standard</li>
-            <li>2nd Standard</li>
-            <li>1st Standard</li>
-          </ul>
-       </div>
-   </div>
-   <hr>
-   <div class="row text-center">
-      <div class="col-md-3">
-          <h4>Powered by School</h4>
-      </div>
-      <div class="col-md-6"></div>
-      <div class="col-md-3">
-           <h4>Copyrights @ Triodesk</h4>
-       </div>
-  </div>
+    <h5>Students List</h5>
+    <div class="row">
+        <div class="col-md-4 col-sm-3">
+            <ul class="nav nav-pills nav-pills-btn-primary nav-stacked">
+                <li class="active">
+                    <a href="#tab1" data-toggle="tab">12th Standard</a>
+                </li>
+                <li>
+                    <a href="#tab2" data-toggle="tab">11th Standard</a>
+                </li>
+                <li>
+                    <a href="#tab3" data-toggle="tab">10th Standard</a>
+                </li>
+                <li>
+                    <a href="#tab4" data-toggle="tab">9th Standard</a>
+                </li>
+                <li>
+                    <a href="#tab5" data-toggle="tab">8th Standard</a>
+                </li>
+                <li>
+                    <a href="#tab6" data-toggle="tab">7th Standard</a>
+                </li>
+                <li>
+                    <a href="#tab7" data-toggle="tab">6th Standard</a>
+                </li>
+                <li>
+                    <a href="#tab8" data-toggle="tab">5th Standard</a>
+                </li>
+                <li>
+                    <a href="#tab9" data-toggle="tab">4th Standard</a>
+                </li>
+                <li>
+                    <a href="#tab10" data-toggle="tab">3rd Standard</a>
+                </li>
+                <li>
+                    <a href="#tab11" data-toggle="tab">2nd Standard</a>
+                </li>
+                <li>
+                    <a href="#tab12" data-toggle="tab">1st Standard</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="col-md-8 col-sm-9">
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>Gender</th>
+                                    <th>FatherName</th>
+                                    <th class="text-right">Mobile</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor='let students of twelthStudents;let i=index'>
+                                    <td class="text-center">{{i+1}}</td>
+                                    <td>{{students.name}}</td>
+                                    <td>{{students.gender}}</td>
+                                    <td>{{students.fathername}}</td>
+                                    <td class="text-right">{{students.mobile}}</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab2">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                    <tr>
+                                            <th class="text-center">#</th>
+                                            <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>FatherName</th>
+                                            <th class="text-right">Mobile</th>
+                                            <th class="text-right">Actions</th>
+                                        </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor='let students of eleventhStudents;let i=index'>
+                                        <td class="text-center">{{i+1}}</td>
+                                        <td>{{students.name}}</td>
+                                        <td>{{students.gender}}</td>
+                                        <td>{{students.fathername}}</td>
+                                        <td class="text-right">{{students.mobile}}</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab3">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                    <tr>
+                                            <th class="text-center">#</th>
+                                            <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>FatherName</th>
+                                            <th class="text-right">Mobile</th>
+                                            <th class="text-right">Actions</th>
+                                        </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>Andrew Mike</td>
+                                    <td>Develop</td>
+                                    <td>2013</td>
+                                    <td class="text-right">€ 99,225</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab4">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                    <tr>
+                                            <th class="text-center">#</th>
+                                            <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>FatherName</th>
+                                            <th class="text-right">Mobile</th>
+                                            <th class="text-right">Actions</th>
+                                        </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>Andrew Mike</td>
+                                    <td>Develop</td>
+                                    <td>2013</td>
+                                    <td class="text-right">€ 99,225</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab5">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                    <tr>
+                                            <th class="text-center">#</th>
+                                            <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>FatherName</th>
+                                            <th class="text-right">Mobile</th>
+                                            <th class="text-right">Actions</th>
+                                        </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>Andrew Mike</td>
+                                    <td>Develop</td>
+                                    <td>2013</td>
+                                    <td class="text-right">€ 99,225</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab6">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                    <tr>
+                                            <th class="text-center">#</th>
+                                            <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>FatherName</th>
+                                            <th class="text-right">Mobile</th>
+                                            <th class="text-right">Actions</th>
+                                        </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>Andrew Mike</td>
+                                    <td>Develop</td>
+                                    <td>2013</td>
+                                    <td class="text-right">€ 99,225</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab7">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                    <tr>
+                                            <th class="text-center">#</th>
+                                            <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>FatherName</th>
+                                            <th class="text-right">Mobile</th>
+                                            <th class="text-right">Actions</th>
+                                        </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>Andrew Mike</td>
+                                    <td>Develop</td>
+                                    <td>2013</td>
+                                    <td class="text-right">€ 99,225</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab8">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                    <tr>
+                                            <th class="text-center">#</th>
+                                            <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>FatherName</th>
+                                            <th class="text-right">Mobile</th>
+                                            <th class="text-right">Actions</th>
+                                        </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>Andrew Mike</td>
+                                    <td>Develop</td>
+                                    <td>2013</td>
+                                    <td class="text-right">€ 99,225</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab9">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                    <tr>
+                                            <th class="text-center">#</th>
+                                            <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>FatherName</th>
+                                            <th class="text-right">Mobile</th>
+                                            <th class="text-right">Actions</th>
+                                        </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>Andrew Mike</td>
+                                    <td>Develop</td>
+                                    <td>2013</td>
+                                    <td class="text-right">€ 99,225</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab10">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                    <tr>
+                                            <th class="text-center">#</th>
+                                            <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>FatherName</th>
+                                            <th class="text-right">Mobile</th>
+                                            <th class="text-right">Actions</th>
+                                        </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>Andrew Mike</td>
+                                    <td>Develop</td>
+                                    <td>2013</td>
+                                    <td class="text-right">€ 99,225</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab11">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                    <tr>
+                                            <th class="text-center">#</th>
+                                            <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>FatherName</th>
+                                            <th class="text-right">Mobile</th>
+                                            <th class="text-right">Actions</th>
+                                        </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>Andrew Mike</td>
+                                    <td>Develop</td>
+                                    <td>2013</td>
+                                    <td class="text-right">€ 99,225</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab12">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                    <tr>
+                                            <th class="text-center">#</th>
+                                            <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>FatherName</th>
+                                            <th class="text-right">Mobile</th>
+                                            <th class="text-right">Actions</th>
+                                        </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td>Andrew Mike</td>
+                                    <td>Develop</td>
+                                    <td>2013</td>
+                                    <td class="text-right">€ 99,225</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                        <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row text-center">
+        <div class="col-md-3">
+            <h4>Powered by School</h4>
+        </div>
+        <div class="col-md-6"></div>
+        <div class="col-md-3">
+            <h4>Copyrights @ Triodesk</h4>
+        </div>
+    </div>
 </div>

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import {HttpModule} from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -8,6 +9,8 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
 import { AddmissionComponent } from './addmission/addmission.component';
 import { AllstudentsComponent } from './allstudents/allstudents.component';
 import { TransferstudentComponent } from './transferstudent/transferstudent.component';
+
+import {DataService} from './data.service'
 
 
 @NgModule({
@@ -20,6 +23,7 @@ import { TransferstudentComponent } from './transferstudent/transferstudent.comp
     TransferstudentComponent
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     RouterModule.forRoot([
     {path:'login',component:LoginComponent},
@@ -34,7 +38,7 @@ import { TransferstudentComponent } from './transferstudent/transferstudent.comp
     }
     ])
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
