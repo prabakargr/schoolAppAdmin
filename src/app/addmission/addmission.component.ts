@@ -13,6 +13,7 @@ newstudent:any;
   ngOnInit() {
   }
   newStudent(value){
+    console.log(value);
   this.dataservice.createStudent(value).subscribe(res=>{
     this.newstudent=res
   })
