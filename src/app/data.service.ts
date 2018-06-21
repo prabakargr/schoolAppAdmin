@@ -9,11 +9,11 @@ export class DataService {
 
   constructor(public http:Http) { }
   getAllStudents(){
-    return this.http.get('https://5b2a1bc03a8ea3001418d704.mockapi.io/12students')
+    return this.http.get('https://thawing-gorge-57262.herokuapp.com/students/getstudents')
     .map(result=>this.allStudents=result.json())
   }
   createStudent(value){
-    return this.http.post('https://5b2a1bc03a8ea3001418d704.mockapi.io/12students',value)
+    return this.http.post('https://thawing-gorge-57262.herokuapp.com/students/createstudent',value)
     .map(result=>this.newstudent=result.json())
   }
 
