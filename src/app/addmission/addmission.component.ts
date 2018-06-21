@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from '../data.service';
 
 @Component({
   selector: 'app-addmission',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./addmission.component.css']
 })
 export class AddmissionComponent implements OnInit {
-
-  constructor() { }
+newstudent:any;
+  constructor( public dataservice:DataService ) { }
 
   ngOnInit() {
+  }
+  newStudent(value){
+  this.dataservice.createStudent(value).subscribe(res=>{
+    this.newstudent=res
+  })
   }
 
 }
