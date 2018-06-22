@@ -40,7 +40,8 @@
                 <span class="input-group-addon">
                   <i class="material-icons">email</i>
                 </span>
-                <div class="form-group is-empty">
+                    <div class="form-group label-floating is-empty">
+                        <label class="control-label">Email</label>
                   <!-- <input type="text" class="form-control" placeholder="Email..."> -->
                   <input type="email" class="form-control"  name="email" #Email="ngModel"  
                   pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required ngModel>
@@ -60,7 +61,8 @@
                 <span class="input-group-addon">
                   <i class="material-icons">lock_outline</i>
                 </span>
-                <div class="form-group is-empty">
+                    <div class="form-group label-floating is-empty">
+                        <label class="control-label">Password</label>
                   <!-- <input type="password" placeholder="Password..." class="form-control"> -->
                   <input type="password" class="form-control" name="password" #Password="ngModel" minlength="6" required  ngModel>
                   <div *ngIf="Password.errors && (Password.touched|| Password.dirty)" class="alert text-danger">

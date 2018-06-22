@@ -64,7 +64,7 @@
       <div class="row">
           <div class="col-md-3">
              <div class="form-group label-floating is-empty">
-                 <label class="control-label"></label>
+                 <label class="control-label">DOB</label>
                  <input type="date" name="dob" #dob="ngModel" class="form-control"  ngModel required >
                  <div *ngIf="dob.errors && dob.touched" class="alert text-danger">
                     <div [hidden]="!dob.errors.required">
