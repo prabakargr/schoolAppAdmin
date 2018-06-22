@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   }
   onLogin(value){
     console.log(value);
-    this.router.navigate(['/landingpage']);
+    this.router.navigate(['/app']);
   }
 
 }

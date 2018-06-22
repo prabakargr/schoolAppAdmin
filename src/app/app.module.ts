@@ -12,7 +12,8 @@ import { AddmissionComponent } from './addmission/addmission.component';
 import { AllstudentsComponent } from './allstudents/allstudents.component';
 import { TransferstudentComponent } from './transferstudent/transferstudent.component';
 
-import {DataService} from './data.service'
+import {DataService} from './data.service';
+import { AddteacherComponent } from './addteacher/addteacher.component'
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {DataService} from './data.service'
     LandingpageComponent,
     AddmissionComponent,
     AllstudentsComponent,
-    TransferstudentComponent
+    TransferstudentComponent,
+    AddteacherComponent
   ],
   imports: [
     HttpModule,
@@ -31,12 +33,13 @@ import {DataService} from './data.service'
     RouterModule.forRoot([
     {path:'login',component:LoginComponent},
     {path:'',pathMatch:'full',redirectTo:'login'},
-    {path:'landingpage',component:LandingpageComponent,
+    {path:'app',component:LandingpageComponent,
     children:[
       {path:"addmission",component:AddmissionComponent},
       {path:'',pathMatch:'full',redirectTo:'addmission'},
       {path:'allstudents',component:AllstudentsComponent},
-      {path:'tranferstudent',component:TransferstudentComponent}
+      {path:'tranferstudent',component:TransferstudentComponent},
+      {path:'addteacher',component:AddteacherComponent}
     ]
     }
     ])
