@@ -213,27 +213,27 @@
             <div class="col-md-9">
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox" name="tamil" value="tamil"ngModel>
+                        <input type="checkbox" name="tamil" [(ngModel)]="tamil" (change)="check()" ngModel>
                         <span class="checkbox-material"></span>
                         Tamil
                     </label>
                     <label>
-                        <input type="checkbox" name="engilsh" value="engilsh" ngModel>
+                        <input type="checkbox" name="english" [(ngModel)]="english" ngModel>
                         <span class="checkbox-material"></span>
                         English
                     </label>
                     <label>
-                        <input type="checkbox" name="maths" value="maths" ngModel>
+                        <input type="checkbox" name="maths" [(ngModel)]="maths"  ngModel>
                         <span class="checkbox-material"></span>
                         Maths
                     </label>
                     <label>
-                        <input type="checkbox" name="science" value="science" ngModel>
+                        <input type="checkbox" name="science" [(ngModel)]="science" ngModel>
                         <span class="checkbox-material"></span>
                         Science
                     </label>
                     <label>
-                        <input type="checkbox" name="socialscience" value="socialscience" ngModel>
+                        <input type="checkbox" name="social" [(ngModel)]="social" ngModel>
                         <span class="checkbox-material"></span>
                         SocialScience
                     </label>

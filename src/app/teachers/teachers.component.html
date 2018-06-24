@@ -1,0 +1,70 @@
+<div class="container">
+  <h5>Teachers</h5>
+    <div class="row">
+         <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>FatherName</th>
+                            <th>Mobile</th>
+                            <th>Subjects</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let teacher of teachers;let i=index'>
+                            <td class="text-center">{{i+1}}</td>
+                            <td>{{teacher.name}}</td>
+                            <td>{{teacher.gender}}</td>
+                            <td>{{teacher.fathername}}</td>
+                            <td>{{teacher.mobilenumber}}</td>
+                            <td>
+                                              <label>
+                                                <input type="checkbox" name="tamil" [(ngModel)]="teacher.tamil" ngModel>
+                                                <span class="checkbox-material"></span>
+                                                T
+                                            </label>
+                                       
+                                            <label>
+                                                <input type="checkbox" name="english" [(ngModel)]="teacher.english" ngModel>
+                                                <span class="checkbox-material"></span>
+                                                E
+                                            </label>
+                                      
+                                            <label>
+                                                <input type="checkbox" name="maths" [(ngModel)]="teacher.maths" ngModel>
+                                                <span class="checkbox-material"></span>
+                                                M
+                                            </label>
+                                        
+                                            <label>
+                                                <input type="checkbox" name="science" [(ngModel)]="teacher.science" ngModel>
+                                                <span class="checkbox-material"></span>
+                                                SC
+                                            </label>
+                                        
+                                            <label>
+                                                <input type="checkbox" name="social" [(ngModel)]="teacher.social" ngModel>
+                                                <span class="checkbox-material"></span>
+                                                SS
+                                            </label>
+                            </td>
+                            <td class="td-actions">
+                                <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                    <i class="material-icons">edit</i>
+                                </button>
+                                <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                    <i class="material-icons">close</i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> 
+         </div>
+    </div>
+</div>

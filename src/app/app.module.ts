@@ -13,7 +13,8 @@ import { AllstudentsComponent } from './allstudents/allstudents.component';
 import { TransferstudentComponent } from './transferstudent/transferstudent.component';
 
 import {DataService} from './data.service';
-import { AddteacherComponent } from './addteacher/addteacher.component'
+import { AddteacherComponent } from './addteacher/addteacher.component';
+import { TeachersComponent } from './teachers/teachers.component'
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { AddteacherComponent } from './addteacher/addteacher.component'
     AddmissionComponent,
     AllstudentsComponent,
     TransferstudentComponent,
-    AddteacherComponent
+    AddteacherComponent,
+    TeachersComponent
   ],
   imports: [
     HttpModule,
@@ -39,7 +41,8 @@ import { AddteacherComponent } from './addteacher/addteacher.component'
       {path:'',pathMatch:'full',redirectTo:'addmission'},
       {path:'allstudents',component:AllstudentsComponent},
       {path:'tranferstudent',component:TransferstudentComponent},
-      {path:'addteacher',component:AddteacherComponent}
+      {path:'addteacher',component:AddteacherComponent},
+      {path:'teachers',component:TeachersComponent}
     ]
     }
     ])

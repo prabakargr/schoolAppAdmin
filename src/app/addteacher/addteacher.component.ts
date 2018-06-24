@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from '../data.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-addteacher',
@@ -6,13 +8,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./addteacher.component.css']
 })
 export class AddteacherComponent implements OnInit {
-  Boolean:true
-  constructor() { }
+  public tamil: boolean = false;
+  public english: boolean = false;
+  public maths: boolean = false;
+  public science: boolean = false;
+  public social: boolean = false;
+  
+  constructor( public dataservice:DataService,
+               public router:Router) { }
 
   ngOnInit() {
   }
+  check(){
+    
+  }
   newTeacher(value){
-    console.log(value);
+    this.dataservice.addteacher(value).subscribe(res=>{
+    this.router.navigate(['/app/teachers'])
+    })
   }
 
 }
