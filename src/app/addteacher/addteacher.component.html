@@ -50,11 +50,17 @@
             <div class="col-md-3">
                 <div class="form-group label-floating is-empty">
                     <label class="control-label">Aadhar Number</label>
-                    <input type="text" name="aadharnumber" #aadharnumber="ngModel" class="form-control" ngModel required>
+                    <input type="text" name="aadharnumber" pattern="[0-9]+" #aadharnumber="ngModel" minlength="12" maxlength="12" class="form-control" ngModel required>
                     <div *ngIf="aadharnumber.errors && aadharnumber.touched" class="alert text-danger">
-                        <div [hidden]="!mothername.errors.required">
+                        <div [hidden]="!aadharnumber.errors.required">
                             * Enter aadharnumber
                         </div>
+                        <div [hidden]="!aadharnumber.errors.minlength">
+                                * Enter 12 char
+                            </div>
+                        <div [hidden]="!aadharnumber.errors.pattern">
+                                 * Enter numeric char
+                        </div>   
                     </div>
                     <span class="material-input"></span>
                 </div>
@@ -94,11 +100,17 @@
             <div class="col-md-3">
                 <div class="form-group label-floating is-empty">
                     <label class="control-label">Mobile Nmuber</label>
-                    <input type="text" name="mobilenumber" #mobilenumber="ngModel" class="form-control" ngModel required>
+                    <input type="text" name="mobilenumber" pattern="[0-9]+" minlength="10" maxlength="10" #mobilenumber="ngModel" class="form-control" ngModel required>
                     <div *ngIf="mobilenumber.errors && mobilenumber.touched" class="alert text-danger">
                         <div [hidden]="!mobilenumber.errors.required">
                             * Enter mobilenumber
                         </div>
+                        <div [hidden]="!mobilenumber.errors.minlength">
+                                * Enter 10 char
+                            </div>
+                            <div [hidden]="!mobilenumber.errors.pattern">
+                                    * Enter numeric
+                                </div>
                     </div>
                     <span class="material-input"></span>
                 </div>
@@ -121,24 +133,19 @@
                 <div class="form-group label-floating is-empty">
                     <label class="control-label"></label>
                     <!-- <input type="text" name="standard" #standard="ngModel" class="form-control"  ngModel required > -->
-                    <select name="qualification" #standard="ngModel" class="form-control" ngModel required>
+                    <select name="qualification" #qualification="ngModel" class="form-control" ngModel required>
                         <option value="" disabled> Qualification </option>
-                        <option value="1"> 1 </option>
-                        <option value="2"> 2 </option>
-                        <option value="3"> 3 </option>
-                        <option value="4"> 4 </option>
-                        <option value="5"> 5 </option>
-                        <option value="6"> 6 </option>
-                        <option value="7"> 7 </option>
-                        <option value="8"> 8 </option>
-                        <option value="9"> 9 </option>
-                        <option value="10"> 10 </option>
-                        <option value="11"> 11 </option>
-                        <option value="12"> 12</option>
+                        <option value="B.EL.ED"> B.EL.ED </option>
+                        <option value="D.EL.ED"> D.EL.ED </option>
+                        <option value="B.Ed"> B.Ed </option>
+                        <option value="B.P.ED"> B.P.ED </option>
+                        <option value="M.A"> M.A </option>
+                        <option value="B.A"> B.A </option>
+                        <option value="B.S"> B.S </option>
                     </select>
-                    <div *ngIf="standard.errors && standard.touched" class="alert text-danger">
-                        <div [hidden]="!standard.errors.required">
-                            * Enter standard
+                    <div *ngIf="qualification.errors && qualification.touched" class="alert text-danger">
+                        <div [hidden]="!qualification.errors.required">
+                            * Enter qualification
                         </div>
                     </div>
                     <span class="material-input"></span>
@@ -176,9 +183,6 @@
                         <div [hidden]="!fatheroccupation.errors.required">
                             * Enter fatheroccupation
                         </div>
-                        <div [hidden]="!fatheroccupation.errors.minlength">
-                            * Please fill atleast 4 character
-                        </div>
                     </div>
                     <span class="material-input"></span>
                 </div>
@@ -190,6 +194,7 @@
                     <!-- <input type="text" name="motheroccupation" #motheroccupation="ngModel" class="form-control" minlength="4" ngModel required > -->
                     <select name="motheroccupation" #motheroccupation="ngModel" class="form-control" ngModel required>
                         <option value="" disabled> Mother Occupation </option>
+                        <option value="housewife"> House Wife </option>
                         <option value="Employeer"> Employeer </option>
                         <option value="Goverment Employee"> Goverment Employee </option>
                         <option value="Daily wage"> Daily wage </option>
@@ -198,15 +203,12 @@
                         <div [hidden]="!motheroccupation.errors.required">
                             * Enter motheroccupation
                         </div>
-                        <div [hidden]="!motheroccupation.errors.minlength">
-                            * Please fill atleast 4 character
-                        </div>
                     </div>
                     <span class="material-input"></span>
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row subjects_selection">
             <div class="col-md-3">
                 <h5>Select Subjects</h5>
             </div>
@@ -223,7 +225,7 @@
                         English
                     </label>
                     <label>
-                        <input type="checkbox" name="maths" [(ngModel)]="maths"  ngModel>
+                        <input type="checkbox" name="maths" [(ngModel)]="maths" ngModel>
                         <span class="checkbox-material"></span>
                         Maths
                     </label>
@@ -242,7 +244,7 @@
         </div>
         <div class="row">
             <div class="col-md-offset-4 col-md-4 text-center">
-                <button class="btn btn-primary btn-round" type="submit" [disabled]="!addTeacherForm.form.valid">Create Student</button>
+                <button class="btn btn-primary btn-round" type="submit" [disabled]="!addTeacherForm.form.valid">Create Teacher</button>
             </div>
         </div>
         <hr>

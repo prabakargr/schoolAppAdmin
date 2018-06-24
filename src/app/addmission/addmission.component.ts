@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../data.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-addmission',
@@ -8,7 +9,8 @@ import {DataService} from '../data.service';
 })
 export class AddmissionComponent implements OnInit {
 newstudent:any;
-  constructor( public dataservice:DataService ) { }
+  constructor( public dataservice:DataService,
+               public router:Router ) { }
 
   ngOnInit() {
   }
@@ -16,6 +18,7 @@ newstudent:any;
     console.log(value);
   this.dataservice.createStudent(value).subscribe(res=>{
     this.newstudent=res
+    this.router.navigate(['/app/allstudents'])
   })
   }
 

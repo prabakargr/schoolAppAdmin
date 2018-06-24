@@ -51,10 +51,16 @@
          <div class="col-md-3">
             <div class="form-group label-floating is-empty">
 			    <label class="control-label">Aadhar Number</label>
-				<input type="text" name="aadharnumber" #aadharnumber="ngModel" class="form-control"  ngModel required >
+				<input type="text" name="aadharnumber" pattern="[0-9]+" minlength="12" maxlength="12" #aadharnumber="ngModel" class="form-control"  ngModel required >
                 <div *ngIf="aadharnumber.errors && aadharnumber.touched" class="alert text-danger">
-                    <div [hidden]="!mothername.errors.required">
+                    <div [hidden]="!aadharnumber.errors.required">
                         * Enter  aadharnumber
+                    </div>
+                    <div [hidden]="!aadharnumber.errors.minlength">
+                            * Enter  12 char
+                    </div>
+                    <div [hidden]="!aadharnumber.errors.pattern">
+                            * Enter  numeric
                     </div>
                 </div>      
                 <span class="material-input"></span>
@@ -95,10 +101,16 @@
           <div class="col-md-3">
              <div class="form-group label-floating is-empty">
                  <label class="control-label">Mobile Nmuber</label>
-                 <input type="text" name="mobilenumber" #mobilenumber="ngModel" class="form-control"  ngModel required >
+                 <input type="text" name="mobilenumber" pattern="[0-9]+" minlength="10" maxlength="10" #mobilenumber="ngModel" class="form-control"  ngModel required >
                  <div *ngIf="mobilenumber.errors && mobilenumber.touched" class="alert text-danger">
                     <div [hidden]="!mobilenumber.errors.required">
                         * Enter  mobilenumber
+                    </div>
+                    <div [hidden]="!mobilenumber.errors.minlength">
+                        * Enter 10 char
+                    </div>
+                    <div [hidden]="!mobilenumber.errors.pattern">
+                        * Enter numeric
                     </div>
                 </div>   
                  <span class="material-input"></span>
