@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/add/operator/map'
-import { resource } from 'selenium-webdriver/http';
+
 
 @Injectable()
 export class DataService {
