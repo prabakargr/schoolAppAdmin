@@ -11,5 +11,8 @@ export class TransferstudentComponent implements OnInit {
 
   ngOnInit() {
   }
+transferStudent(value){
+  console.log(value);
+}
 
 }

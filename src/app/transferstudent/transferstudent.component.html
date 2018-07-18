@@ -1,3 +1,197 @@
-<p>
-  transferstudent works!
-</p>
+<div class="col-md-12">
+  <ul class="nav nav-pills">
+    <li class=""><a href="#pill1" data-toggle="tab" aria-expanded="false">Transfer</a></li>
+    <li class="active"><a href="#pill2" data-toggle="tab" aria-expanded="true">Request</a></li>
+  </ul>
+<div class="tab-content tab-space">
+    <div class="tab-pane" id="pill1">
+        <div class="container">
+            <h5>Transfer Student</h5>
+            <form #transferForm="ngForm" (ngSubmit)='transferStudent(transferForm.value)' 
+            method="#" action="#">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                  <div class="col-md-3">
+                    <label>Standard</label>
+                  </div>
+                  <div class="col-md-9">
+                    <div class="form-group label-floating is-empty">
+                       <label class="control-label"></label>
+                       <!-- <input type="text" name="standard" #standard="ngModel" class="form-control"  ngModel required > -->
+                       <select name="standard" #standard="ngModel" class="form-control"  ngModel required >
+                              <option value="" disabled> Standard </option>
+                              <option value="1">   1 </option>
+                              <option value="2">   2 </option>
+                              <option value="3">   3 </option>
+                              <option value="4">   4 </option>
+                              <option value="5">   5 </option>
+                              <option value="6">   6 </option>
+                              <option value="7">   7 </option>
+                              <option value="8">   8 </option>
+                              <option value="9">   9 </option>
+                              <option value="10">  10 </option>
+                              <option value="11">  11 </option>
+                              <option value="12">  12</option>
+                          </select> 
+                       <div *ngIf="standard.errors && standard.touched" class="alert text-danger">
+                          <div [hidden]="!standard.errors.required">
+                              * Enter  standard
+                          </div>
+                      </div>   
+                       <span class="material-input"></span>
+                  </div> 
+                </div>                                   
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                  <div class="col-md-3">
+                      <label>Name</label>
+                    </div>
+                    <div class="col-md-9">
+                      <div class="form-group label-floating is-empty">
+                          <label class="control-label">Name</label>
+                            <input type="text" name="name" #name="ngModel" class="form-control" minlength="4" ngModel required >
+                              <div *ngIf="name.errors && name.touched" class="alert text-danger">
+                                <div [hidden]="!name.errors.required">
+                                    * Enter  Name
+                                  </div>
+                                  <div [hidden]="!name.errors.minlength">
+                                    * Please fill atleast 4 character
+                                  </div>    
+                              </div>    
+                              <span class="material-input"></span>
+                       </div>
+                    </div>                                       
+                  </div>                  
+               </div> 
+               <div class="row">
+                  <div class="col-md-8 col-md-offset-2">
+                      <div class="col-md-3">
+                          <label>Transfer to School</label>
+                        </div>
+                        <div class="col-md-9">
+                          <div class="form-group label-floating is-empty">
+                              <label class="control-label">Transfer to School</label>
+                                <input type="text" name="tostd" #tostd="ngModel" class="form-control" ngModel required >
+                                  <div *ngIf="tostd.errors && tostd.touched" class="alert text-danger">
+                                    <div [hidden]="!tostd.errors.required">
+                                        * Enter  tostd
+                                      </div>                                       
+                                  </div>    
+                                  <span class="material-input"></span>
+                           </div>
+                        </div>                                       
+                      </div>                  
+                   </div>   
+                   <div class="row">
+                      <div class="col-md-8 col-md-offset-2">
+                          <div class="col-md-3">
+                              <label>To School</label>
+                            </div>
+                            <div class="col-md-9">
+                              <div class="form-group label-floating is-empty">
+                                  <label class="control-label">To School</label>
+                                    <input type="text" name="school" #school="ngModel" class="form-control" ngModel required >
+                                      <div *ngIf="school.errors && school.touched" class="alert text-danger">
+                                        <div [hidden]="!school.errors.required">
+                                            * Enter  Name
+                                          </div>                                              
+                                      </div>    
+                                      <span class="material-input"></span>
+                               </div>
+                            </div>                                       
+                          </div>                  
+                       </div>    
+                       <div class="row">
+                          <div class="col-md-8 col-md-offset-2">
+                              <div class="col-md-3">
+                                  <label>date</label>
+                                </div>
+                                <div class="col-md-9">
+                                  <div class="form-group label-floating is-empty">
+                                      <label class="control-label"></label>
+                                        <input type="date" name="date" #date="ngModel" class="form-control" ngModel required >
+                                          <div *ngIf="date.errors && date.touched" class="alert text-danger">
+                                            <div [hidden]="!date.errors.required">
+                                                * Enter  date
+                                              </div>                                                 
+                                          </div>    
+                                          <span class="material-input"></span>
+                                   </div>
+                                </div>                                       
+                              </div>                  
+                           </div>       
+               
+                <div class="row">
+                    <div class="col-md-offset-4 col-md-4 text-center">
+                         <button class="btn btn-primary btn-round" type="submit" [disabled]="!transferForm.form.valid" >Transfer Student</button>
+                    </div>
+                </div>
+                <hr>
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <h4>Powered by School</h4>
+                    </div>
+                    <div class="col-md-6"></div>
+                    <div class="col-md-3">
+                         <h4>Copyrights @ Triodesk</h4>
+                     </div>
+                </div>
+            </form>
+         </div>         
+    </div>
+    <div class="tab-pane active" id="pill2">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab1">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">#</th>
+                                        <th>Name</th>
+                                        <th>Gender</th>
+                                        <th>FatherName</th>
+                                        <th class="text-right">Mobile</th>
+                                        <th class="text-right">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor='let students of twelthStudents;let i=index'>
+                                        <td class="text-center">{{i+1}}</td>
+                                        <td>{{students.name}}</td>
+                                        <td>{{students.gender}}</td>
+                                        <td>{{students.fathername}}</td>
+                                        <td class="text-right">{{students.mobilenumber}}</td>
+                                        <td class="td-actions text-right">
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                            <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                                <i class="material-icons">close</i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>                              
+                    </div>                 
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row text-center">
+            <div class="col-md-3">
+                <h4>Powered by School</h4>
+            </div>
+            <div class="col-md-6"></div>
+            <div class="col-md-3">
+                <h4>Copyrights @ Triodesk</h4>
+            </div>
+        </div>
+    </div>
+     
+    </div>  
+</div>
