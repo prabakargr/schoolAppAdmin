@@ -1,15 +1,27 @@
 <div class="col-md-12" style="margin-top: 2.5rem">
     <div class="container">
         <div class="row">
-            <div class="col-md-offset-4 col-md-4">
+            <div class="col-md-3 col-sm-2">
+
+            </div>
+            <div class="col-md-6 col-sm-8 btnTabs">
                 <ul class="nav nav-pills">
                     <li class="active">
-                        <a href="#pill1" data-toggle="tab" aria-expanded="false">Transfer</a>
+                        <a href="#pill1" data-toggle="tab" aria-expanded="false">Create Transfer</a>
                     </li>
                     <li class="">
-                        <a href="#pill2" data-toggle="tab" aria-expanded="true">Request</a>
+                        <a href="#pill2" data-toggle="tab" aria-expanded="true">Created</a>
+                    </li>
+                    <li>
+                        <a href="#pill3" data-toggle="tab" aria-expanded="false">inward</a>
+                    </li>
+                    <li>
+                        <a href="#pill4" data-toggle="tab" aria-expanded="true">Accepted</a>
                     </li>
                 </ul>
+            </div>
+            <div class="col-md-3 col-sm-2">
+
             </div>
         </div>
     </div>
@@ -20,8 +32,8 @@
                 <form #transferForm="ngForm" (ngSubmit)='transferStudent(transferForm.value)' method="#" action="#">
                     <div class="row">
                         <div class="col-md-4">
-                            <div class="form-group label-floating is-empty">
-                                <label class="control-label"></label>
+                            <div class="form-group is-empty">
+                                <label class="control-label">Select Standard</label>
                                 <!-- <input type="text" name="standard" #standard="ngModel" class="form-control"  ngModel required > -->
                                 <select name="standard" (change)="selectStandard(transferForm.value)" #standard="ngModel" class="form-control" ngModel required>
                                     <option value="" disabled>Select Standard </option>
@@ -47,8 +59,8 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group label-floating is-empty">
-                                <label class="control-label"></label>
+                            <div class="form-group is-empty">
+                                <label class="control-label">Select Student</label>
                                 <select name="name" #name="ngModel" class="form-control" ngModel required>
                                     <option value="" disabled>Select Name </option>
                                     <option *ngFor="let students of selectedStandard " value="{{students}}">{{students}} </option>
@@ -65,8 +77,8 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group label-floating is-empty">
-                                <label class="control-label"></label>
+                            <div class="form-group is-empty">
+                                <label class="control-label">Select To Standard</label>
                                 <select name="tostd" #tostd="ngModel" class="form-control" ngModel required>
                                     <option value="" disabled>Select To Std </option>
                                     <option *ngFor="let stands of toStd " value="{{stands}}">{{stands}} </option>
@@ -82,7 +94,7 @@
                     </div>
                     <div class="row secondRow">
                         <div class="col-md-4">
-                            <div class="form-group label-floating is-empty">
+                            <div class="form-group is-empty">
                                 <label class="control-label">To School</label>
                                 <input type="text" name="school" #school="ngModel" class="form-control" ngModel required>
                                 <div *ngIf="school.errors && school.touched" class="alert text-danger">
@@ -94,8 +106,8 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group label-floating is-empty">
-                                <label class="control-label"></label>
+                            <div class="form-group is-empty">
+                                <label class="control-label">Transfer Date</label>
                                 <input type="date" name="date" #date="ngModel" class="form-control" ngModel required>
                                 <div *ngIf="date.errors && date.touched" class="alert text-danger">
                                     <div [hidden]="!date.errors.required">
@@ -106,12 +118,12 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-group label-floating is-empty">
-                                <label class="control-label"></label>
-                                <input type="date" name="date" #date="ngModel" class="form-control" ngModel required>
-                                <div *ngIf="date.errors && date.touched" class="alert text-danger">
-                                    <div [hidden]="!date.errors.required">
-                                        * Select date
+                            <div class="form-group  is-empty">
+                                <label class="control-label">Reason For Transfer</label>
+                                <input type="text" name="reason" #reason="ngModel" class="form-control" ngModel required>
+                                <div *ngIf="date.errors && reason.touched" class="alert text-danger">
+                                    <div [hidden]="!reason.errors.required">
+                                        * Enter reason
                                     </div>
                                 </div>
                                 <span class="material-input"></span>
@@ -152,6 +164,114 @@
                                             <th>Transfer To School </th>
                                             <th>To School</th>
                                             <th>Date</th>
+                                            <th class="text-right">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor='let students of twelthStudents;let i=index'>
+                                            <td class="text-center">{{i+1}}</td>
+                                            <td>{{students.standard}}</td>
+                                            <td>{{students.name}}</td>
+                                            <td>{{students.gender}}</td>
+                                            <td>{{students.ttschhol}}</td>
+                                            <td>{{students.toschhol}}</td>
+                                            <td>{{students.date}}</td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                    <i class="material-icons">edit</i>
+                                                </button>
+                                                <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                                    <i class="material-icons">close</i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <h4>Powered by School</h4>
+                </div>
+                <div class="col-md-6"></div>
+                <div class="col-md-3">
+                    <h4>Copyrights @ Triodesk</h4>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="pill3">
+            <div class="container">
+                <div class="col-md-12">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab1">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">#</th>
+                                            <th>To Standard</th>
+                                            <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>From School </th>
+                                            <th>Recieved Date</th>
+                                            <th class="text-right">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor='let students of twelthStudents;let i=index'>
+                                            <td class="text-center">{{i+1}}</td>
+                                            <td>{{students.standard}}</td>
+                                            <td>{{students.name}}</td>
+                                            <td>{{students.gender}}</td>
+                                            <td>{{students.ttschhol}}</td>
+                                            <td>{{students.toschhol}}</td>
+                                            <td>{{students.date}}</td>
+                                            <td class="td-actions text-right">
+                                                <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                    <i class="material-icons">edit</i>
+                                                </button>
+                                                <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                                    <i class="material-icons">close</i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <h4>Powered by School</h4>
+                </div>
+                <div class="col-md-6"></div>
+                <div class="col-md-3">
+                    <h4>Copyrights @ Triodesk</h4>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="pill4">
+            <div class="container">
+                <div class="col-md-12">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab1">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">#</th>
+                                            <th>To Standard</th>
+                                            <th>Name</th>
+                                            <th>Gender</th>
+                                            <th>From School </th>
+                                            <th>Recieved Date</th>
                                             <th class="text-right">Actions</th>
                                         </tr>
                                     </thead>
