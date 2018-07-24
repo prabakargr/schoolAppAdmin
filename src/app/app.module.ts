@@ -13,6 +13,7 @@ import { AllstudentsComponent } from './allstudents/allstudents.component';
 import { TransferstudentComponent } from './transferstudent/transferstudent.component';
 
 import {DataService} from './data.service';
+import {ShareService} from './share.service';
 import { AddteacherComponent } from './addteacher/addteacher.component';
 import { TeachersComponent } from './teachers/teachers.component'
 
@@ -47,7 +48,7 @@ import { TeachersComponent } from './teachers/teachers.component'
     }
     ])
   ],
-  providers: [DataService],
+  providers: [DataService,ShareService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,118 +1,129 @@
 <div class="col-md-12" style="margin-top: 2.5rem">
-    <div class="row">
-        <div class="col-md-4  col-md-offset-4">
-            <ul class="nav nav-pills">
-                <li class="active"><a href="#pill1" data-toggle="tab" aria-expanded="false">Transfer</a></li>
-                <li class=""><a href="#pill2" data-toggle="tab" aria-expanded="true">Request</a></li>
-             </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-4 col-md-4">
+                <ul class="nav nav-pills">
+                    <li class="active">
+                        <a href="#pill1" data-toggle="tab" aria-expanded="false">Transfer</a>
+                    </li>
+                    <li class="">
+                        <a href="#pill2" data-toggle="tab" aria-expanded="true">Request</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
     <div class="tab-content tab-space active">
         <div class="tab-pane active" id="pill1">
             <div class="container">
                 <h5>Transfer Student</h5>
-                <form #transferForm="ngForm" (ngSubmit)='transferStudent(transferForm.value)' 
-                    method="#" action="#">
-                    <div class="row">                           
-                        <div class="col-md-4">
-                            <div class="form-group label-floating is-empty">
-                            <label class="control-label"></label>
-                            <!-- <input type="text" name="standard" #standard="ngModel" class="form-control"  ngModel required > -->
-                            <select name="standard" #standard="ngModel" class="form-control"  ngModel required >
-                                    <option value="" disabled> Standard </option>
-                                    <option value="1">   1 </option>
-                                    <option value="2">   2 </option>
-                                    <option value="3">   3 </option>
-                                    <option value="4">   4 </option>
-                                    <option value="5">   5 </option>
-                                    <option value="6">   6 </option>
-                                    <option value="7">   7 </option>
-                                    <option value="8">   8 </option>
-                                    <option value="9">   9 </option>
-                                    <option value="10">  10 </option>
-                                    <option value="11">  11 </option>
-                                    <option value="12">  12</option>
-                                </select> 
-                            <div *ngIf="standard.errors && standard.touched" class="alert text-danger">
-                                <div [hidden]="!standard.errors.required">
-                                    * Select   standard
-                                </div>
-                            </div>   
-                            <span class="material-input"></span>
-                            </div>                                                   
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group label-floating is-empty">
-                                <label class="control-label">Name</label>
-                                <input type="text" name="name" #name="ngModel" class="form-control" minlength="4" ngModel required >
-                                    <div *ngIf="name.errors && name.touched" class="alert text-danger">
-                                    <div [hidden]="!name.errors.required">
-                                        * Enter  Name
-                                        </div>
-                                        <div [hidden]="!name.errors.minlength">
-                                        * Please fill atleast 4 character
-                                        </div>    
-                                    </div>    
-                                    <span class="material-input"></span>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group label-floating is-empty">
-                                <label class="control-label">Transfer to Standard</label>
-                                    <input type="text" name="tostd" #tostd="ngModel" class="form-control" ngModel required >
-                                    <div *ngIf="tostd.errors && tostd.touched" class="alert text-danger">
-                                        <div [hidden]="!tostd.errors.required">
-                                            * Enter  to standard
-                                        </div>                                       
-                                    </div>    
-                                    <span class="material-input"></span>
-                            </div>
-                        </div>  
-                    </div>  
+                <form #transferForm="ngForm" (ngSubmit)='transferStudent(transferForm.value)' method="#" action="#">
                     <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <!-- <input type="text" name="standard" #standard="ngModel" class="form-control"  ngModel required > -->
+                                <select name="standard" (change)="selectStandard(transferForm.value)" #standard="ngModel" class="form-control" ngModel required>
+                                    <option value="" disabled>Select Standard </option>
+                                    <option value="1"> 1 </option>
+                                    <option value="2"> 2 </option>
+                                    <option value="3"> 3 </option>
+                                    <option value="4"> 4 </option>
+                                    <option value="5"> 5 </option>
+                                    <option value="6"> 6 </option>
+                                    <option value="7"> 7 </option>
+                                    <option value="8"> 8 </option>
+                                    <option value="9"> 9 </option>
+                                    <option value="10"> 10 </option>
+                                    <option value="11"> 11 </option>
+                                    <option value="12"> 12</option>
+                                </select>
+                                <div *ngIf="standard.errors && standard.touched" class="alert text-danger">
+                                    <div [hidden]="!standard.errors.required">
+                                        * Select standard
+                                    </div>
+                                </div>
+                                <span class="material-input"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <select name="name" #name="ngModel" class="form-control" ngModel required>
+                                    <option value="" disabled>Select Name </option>
+                                    <option *ngFor="let students of selectedStandard " value="{{students}}">{{students}} </option>
+                                </select>
+                                <div *ngIf="name.errors && name.touched" class="alert text-danger">
+                                    <div [hidden]="!name.errors.required">
+                                        * Enter Name
+                                    </div>
+                                    <div [hidden]="!name.errors.minlength">
+                                        * Please fill atleast 4 character
+                                    </div>
+                                </div>
+                                <span class="material-input"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <select name="tostd" #tostd="ngModel" class="form-control" ngModel required>
+                                    <option value="" disabled>Select To Std </option>
+                                    <option *ngFor="let stands of toStd " value="{{stands}}">{{stands}} </option>
+                                </select>
+                                <div *ngIf="tostd.errors && tostd.touched" class="alert text-danger">
+                                    <div [hidden]="!tostd.errors.required">
+                                        * select to standard
+                                    </div>
+                                </div>
+                                <span class="material-input"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row secondRow">
                         <div class="col-md-4">
                             <div class="form-group label-floating is-empty">
                                 <label class="control-label">To School</label>
-                                    <input type="text" name="school" #school="ngModel" class="form-control" ngModel required >
-                                        <div *ngIf="school.errors && school.touched" class="alert text-danger">
-                                            <div [hidden]="!school.errors.required">
-                                            * Enter to School 
-                                            </div>                                              
-                                        </div>    
-                                        <span class="material-input"></span>
-                            </div>
-                        </div> 
-                        <div class="col-md-4">
-                            <div class="form-group label-floating is-empty">
-                                <label class="control-label"></label>
-                                    <input type="date" name="date" #date="ngModel" class="form-control" ngModel required >
-                                    <div *ngIf="date.errors && date.touched" class="alert text-danger">
-                                    <div [hidden]="!date.errors.required">
-                                            * Select   date
-                                        </div>                                                 
-                                    </div>    
-                                    <span class="material-input"></span>
+                                <input type="text" name="school" #school="ngModel" class="form-control" ngModel required>
+                                <div *ngIf="school.errors && school.touched" class="alert text-danger">
+                                    <div [hidden]="!school.errors.required">
+                                        * Enter to School
+                                    </div>
+                                </div>
+                                <span class="material-input"></span>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group label-floating is-empty">
                                 <label class="control-label"></label>
-                                    <input type="date" name="date" #date="ngModel" class="form-control" ngModel required >
-                                    <div *ngIf="date.errors && date.touched" class="alert text-danger">
+                                <input type="date" name="date" #date="ngModel" class="form-control" ngModel required>
+                                <div *ngIf="date.errors && date.touched" class="alert text-danger">
                                     <div [hidden]="!date.errors.required">
-                                            * Select   date
-                                        </div>                                                 
-                                    </div>    
-                                    <span class="material-input"></span>
+                                        * Select date
+                                    </div>
+                                </div>
+                                <span class="material-input"></span>
                             </div>
-                        </div>           
-                    </div>  
-                    <div class="row">
-                        <div class="col-md-offset-4 col-md-4 text-center">
-                            <button class="btn btn-primary btn-round" type="submit" [disabled]="!transferForm.form.valid" >Transfer Student</button>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group label-floating is-empty">
+                                <label class="control-label"></label>
+                                <input type="date" name="date" #date="ngModel" class="form-control" ngModel required>
+                                <div *ngIf="date.errors && date.touched" class="alert text-danger">
+                                    <div [hidden]="!date.errors.required">
+                                        * Select date
+                                    </div>
+                                </div>
+                                <span class="material-input"></span>
+                            </div>
                         </div>
                     </div>
-                        <hr>
+                    <div class="row">
+                        <div class="col-md-offset-4 col-md-4 text-center">
+                            <button class="btn btn-primary btn-round" type="submit" [disabled]="!transferForm.form.valid">Transfer Student</button>
+                        </div>
+                    </div>
+                    <hr>
                     <div class="row text-center">
                         <div class="col-md-3">
                             <h4>Powered by School</h4>
@@ -123,7 +134,7 @@
                         </div>
                     </div>
                 </form>
-            </div>         
+            </div>
         </div>
         <div class="tab-pane" id="pill2">
             <div class="container">
@@ -164,8 +175,8 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                            </div>                              
-                        </div>                 
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -179,6 +190,6 @@
                     <h4>Copyrights @ Triodesk</h4>
                 </div>
             </div>
-        </div>     
-    </div>  
+        </div>
+    </div>
 </div>

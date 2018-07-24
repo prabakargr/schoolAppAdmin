@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../data.service';
 import {Observable} from 'rxjs/Rx';
+import {ShareService} from '../share.service';
 @Component({
   selector: 'app-allstudents',
   templateUrl: './allstudents.component.html',
@@ -20,7 +21,8 @@ export class AllstudentsComponent implements OnInit {
   thirdStudents:any=[]
   secondStudents:any=[]
   firstStudents:any=[]
-  constructor( public dataservice:DataService) { }
+  constructor( public dataservice:DataService,
+               public shareservice:ShareService) { }
 
   ngOnInit() {
       this.dataservice.getAllStudents().subscribe(res=>{
@@ -53,6 +55,7 @@ export class AllstudentsComponent implements OnInit {
               this.firstStudents.push(this.allStudents[i])
             }
         }
+    this.shareservice.setStudents(res)
       })
   }
 
