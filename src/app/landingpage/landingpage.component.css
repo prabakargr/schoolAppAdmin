@@ -1,6 +1,3 @@
-.container {
-     padding-right: 0px;
-     padding-left: 0px; 
-     margin-right: 0;
-    margin-left: 0; 
+.landingContainer{
+    padding: 0;
 }
