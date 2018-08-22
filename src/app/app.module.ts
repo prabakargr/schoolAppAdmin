@@ -14,8 +14,16 @@ import { TransferstudentComponent } from './transferstudent/transferstudent.comp
 
 import {DataService} from './data.service';
 import {ShareService} from './share.service';
+
+import { LoaderService } from './index';
+
 import { AddteacherComponent } from './addteacher/addteacher.component';
-import { TeachersComponent } from './teachers/teachers.component'
+import { TeachersComponent } from './teachers/teachers.component';
+import { SpinnerComponent } from './spinner/spinner.component'
+
+
+
+
 
 
 @NgModule({
@@ -27,7 +35,8 @@ import { TeachersComponent } from './teachers/teachers.component'
     AllstudentsComponent,
     TransferstudentComponent,
     AddteacherComponent,
-    TeachersComponent
+    TeachersComponent,
+    SpinnerComponent
   ],
   imports: [
     HttpModule,
@@ -48,7 +57,7 @@ import { TeachersComponent } from './teachers/teachers.component'
     }
     ])
   ],
-  providers: [DataService,ShareService],
+  providers: [DataService,ShareService,LoaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
