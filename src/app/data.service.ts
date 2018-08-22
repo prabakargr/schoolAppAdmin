@@ -9,9 +9,10 @@ export class DataService {
   newstudent:any;
   newteacher:any;
   allteachers:any;
+  updatedStudent:any;
 
-  baseURL='https://thawing-gorge-57262.herokuapp.com'
-  // baseURL='http://localhost:4000'
+  // baseURL='https://thawing-gorge-57262.herokuapp.com'
+  baseURL='http://localhost:4000'
 
   constructor(public http:Http) { }
 
@@ -31,6 +32,11 @@ export class DataService {
     return this.http.get(this.baseURL+'/teachers/getteachers')
     .map(result=>this.allteachers=result.json());
   }
+  updateStudent(value){
+    return this.http.post(this.baseURL+'/students/updatestudent/' + value._id,value)
+    .map(result=>this.updatedStudent=result.json())
+  }
+
 
   // transfer details
 

@@ -19,7 +19,8 @@ import { LoaderService } from './index';
 
 import { AddteacherComponent } from './addteacher/addteacher.component';
 import { TeachersComponent } from './teachers/teachers.component';
-import { SpinnerComponent } from './spinner/spinner.component'
+import { SpinnerComponent } from './spinner/spinner.component';
+import { EditStudentComponent } from './edit-student/edit-student.component'
 
 
 
@@ -36,7 +37,8 @@ import { SpinnerComponent } from './spinner/spinner.component'
     TransferstudentComponent,
     AddteacherComponent,
     TeachersComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    EditStudentComponent
   ],
   imports: [
     HttpModule,
@@ -52,7 +54,8 @@ import { SpinnerComponent } from './spinner/spinner.component'
       {path:'allstudents',component:AllstudentsComponent},
       {path:'tranferstudent',component:TransferstudentComponent},
       {path:'addteacher',component:AddteacherComponent},
-      {path:'teachers',component:TeachersComponent}
+      {path:'teachers',component:TeachersComponent},
+      {path:'editstudent/:id',component:EditStudentComponent}
     ]
     }
     ])

@@ -65,9 +65,11 @@
                                     <td>{{students.fathername}}</td>
                                     <td class="text-right">{{students.mobilenumber}}</td>
                                     <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
-                                            <i class="material-icons">edit</i>
-                                        </button>
+                                        <a routerLink='/app/editstudent/{{students._id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </a>
                                         <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
                                             <i class="material-icons">close</i>
                                         </button>
@@ -75,32 +77,34 @@
                                 </tr>
                             </tbody>
                         </table>
-                    </div>                              
+                    </div>
                 </div>
                 <div class="tab-pane" id="tab2">
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
-                                    <tr>
-                                            <th class="text-center">#</th>
-                                            <th>Name</th>
-                                            <th>Gender</th>
-                                            <th>FatherName</th>
-                                            <th class="text-right">Mobile</th>
-                                            <th class="text-right">Actions</th>
-                                        </tr>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>Gender</th>
+                                    <th>FatherName</th>
+                                    <th class="text-right">Mobile</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor='let students of eleventhStudents;let i=index'>
-                                        <td class="text-center">{{i+1}}</td>
-                                        <td>{{students.name}}</td>
-                                        <td>{{students.gender}}</td>
-                                        <td>{{students.fathername}}</td>
-                                        <td class="text-right">{{students.mobilenumber}}</td>
+                                    <td class="text-center">{{i+1}}</td>
+                                    <td>{{students.name}}</td>
+                                    <td>{{students.gender}}</td>
+                                    <td>{{students.fathername}}</td>
+                                    <td class="text-right">{{students.mobilenumber}}</td>
                                     <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
-                                            <i class="material-icons">edit</i>
-                                        </button>
+                                        <a routerLink='/app/editstudent/{{students._id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </a>
                                         <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
                                             <i class="material-icons">close</i>
                                         </button>
@@ -114,26 +118,28 @@
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
-                                    <tr>
-                                            <th class="text-center">#</th>
-                                            <th>Name</th>
-                                            <th>Gender</th>
-                                            <th>FatherName</th>
-                                            <th class="text-right">Mobile</th>
-                                            <th class="text-right">Actions</th>
-                                        </tr>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>Gender</th>
+                                    <th>FatherName</th>
+                                    <th class="text-right">Mobile</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let students of tenthStudents;let i=index">
                                     <td class="text-center">{{i+1}}</td>
-                                        <td>{{students.name}}</td>
-                                        <td>{{students.gender}}</td>
-                                        <td>{{students.fathername}}</td>
-                                        <td class="text-right">{{students.mobilenumber}}</td>
+                                    <td>{{students.name}}</td>
+                                    <td>{{students.gender}}</td>
+                                    <td>{{students.fathername}}</td>
+                                    <td class="text-right">{{students.mobilenumber}}</td>
                                     <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
-                                            <i class="material-icons">edit</i>
-                                        </button>
+                                        <a routerLink='/app/editstudent/{{students._id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </a>
                                         <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
                                             <i class="material-icons">close</i>
                                         </button>
@@ -147,26 +153,28 @@
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
-                                    <tr>
-                                            <th class="text-center">#</th>
-                                            <th>Name</th>
-                                            <th>Gender</th>
-                                            <th>FatherName</th>
-                                            <th class="text-right">Mobile</th>
-                                            <th class="text-right">Actions</th>
-                                        </tr>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>Gender</th>
+                                    <th>FatherName</th>
+                                    <th class="text-right">Mobile</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let students of ninethStudents;let i=index">
                                     <td class="text-center">{{i+1}}</td>
-                                        <td>{{students.name}}</td>
-                                        <td>{{students.gender}}</td>
-                                        <td>{{students.fathername}}</td>
-                                        <td class="text-right">{{students.mobilenumber}}</td>
+                                    <td>{{students.name}}</td>
+                                    <td>{{students.gender}}</td>
+                                    <td>{{students.fathername}}</td>
+                                    <td class="text-right">{{students.mobilenumber}}</td>
                                     <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
-                                            <i class="material-icons">edit</i>
-                                        </button>
+                                        <a routerLink='/app/editstudent/{{students._id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </a>
                                         <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
                                             <i class="material-icons">close</i>
                                         </button>
@@ -180,26 +188,28 @@
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
-                                    <tr>
-                                            <th class="text-center">#</th>
-                                            <th>Name</th>
-                                            <th>Gender</th>
-                                            <th>FatherName</th>
-                                            <th class="text-right">Mobile</th>
-                                            <th class="text-right">Actions</th>
-                                        </tr>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>Gender</th>
+                                    <th>FatherName</th>
+                                    <th class="text-right">Mobile</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let students of eighthStudents;let i=index">
                                     <td class="text-center">{{i+1}}</td>
-                                        <td>{{students.name}}</td>
-                                        <td>{{students.gender}}</td>
-                                        <td>{{students.fathername}}</td>
-                                        <td class="text-right">{{students.mobilenumber}}</td>
+                                    <td>{{students.name}}</td>
+                                    <td>{{students.gender}}</td>
+                                    <td>{{students.fathername}}</td>
+                                    <td class="text-right">{{students.mobilenumber}}</td>
                                     <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
-                                            <i class="material-icons">edit</i>
-                                        </button>
+                                        <a routerLink='/app/editstudent/{{students._id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </a>
                                         <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
                                             <i class="material-icons">close</i>
                                         </button>
@@ -213,26 +223,28 @@
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
-                                    <tr>
-                                            <th class="text-center">#</th>
-                                            <th>Name</th>
-                                            <th>Gender</th>
-                                            <th>FatherName</th>
-                                            <th class="text-right">Mobile</th>
-                                            <th class="text-right">Actions</th>
-                                        </tr>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>Gender</th>
+                                    <th>FatherName</th>
+                                    <th class="text-right">Mobile</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let students of seventhStudents;let i=index">
                                     <td class="text-center">{{i+1}}</td>
-                                        <td>{{students.name}}</td>
-                                        <td>{{students.gender}}</td>
-                                        <td>{{students.fathername}}</td>
-                                        <td class="text-right">{{students.mobilenumber}}</td>
+                                    <td>{{students.name}}</td>
+                                    <td>{{students.gender}}</td>
+                                    <td>{{students.fathername}}</td>
+                                    <td class="text-right">{{students.mobilenumber}}</td>
                                     <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
-                                            <i class="material-icons">edit</i>
-                                        </button>
+                                        <a routerLink='/app/editstudent/{{students._id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </a>
                                         <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
                                             <i class="material-icons">close</i>
                                         </button>
@@ -246,26 +258,28 @@
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
-                                    <tr>
-                                            <th class="text-center">#</th>
-                                            <th>Name</th>
-                                            <th>Gender</th>
-                                            <th>FatherName</th>
-                                            <th class="text-right">Mobile</th>
-                                            <th class="text-right">Actions</th>
-                                        </tr>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>Gender</th>
+                                    <th>FatherName</th>
+                                    <th class="text-right">Mobile</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let students of sixthStudents;let i=index">
                                     <td class="text-center">{{i+1}}</td>
-                                        <td>{{students.name}}</td>
-                                        <td>{{students.gender}}</td>
-                                        <td>{{students.fathername}}</td>
-                                        <td class="text-right">{{students.mobilenumber}}</td>
+                                    <td>{{students.name}}</td>
+                                    <td>{{students.gender}}</td>
+                                    <td>{{students.fathername}}</td>
+                                    <td class="text-right">{{students.mobilenumber}}</td>
                                     <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
-                                            <i class="material-icons">edit</i>
-                                        </button>
+                                        <a routerLink='/app/editstudent/{{students._id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </a>
                                         <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
                                             <i class="material-icons">close</i>
                                         </button>
@@ -279,26 +293,28 @@
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
-                                    <tr>
-                                            <th class="text-center">#</th>
-                                            <th>Name</th>
-                                            <th>Gender</th>
-                                            <th>FatherName</th>
-                                            <th class="text-right">Mobile</th>
-                                            <th class="text-right">Actions</th>
-                                        </tr>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>Gender</th>
+                                    <th>FatherName</th>
+                                    <th class="text-right">Mobile</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let students of fifthStudents;let i=index">
                                     <td class="text-center">{{i+1}}</td>
-                                        <td>{{students.name}}</td>
-                                        <td>{{students.gender}}</td>
-                                        <td>{{students.fathername}}</td>
-                                        <td class="text-right">{{students.mobilenumber}}</td>
+                                    <td>{{students.name}}</td>
+                                    <td>{{students.gender}}</td>
+                                    <td>{{students.fathername}}</td>
+                                    <td class="text-right">{{students.mobilenumber}}</td>
                                     <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
-                                            <i class="material-icons">edit</i>
-                                        </button>
+                                        <a routerLink='/app/editstudent/{{students._id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </a>
                                         <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
                                             <i class="material-icons">close</i>
                                         </button>
@@ -312,26 +328,28 @@
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
-                                    <tr>
-                                            <th class="text-center">#</th>
-                                            <th>Name</th>
-                                            <th>Gender</th>
-                                            <th>FatherName</th>
-                                            <th class="text-right">Mobile</th>
-                                            <th class="text-right">Actions</th>
-                                        </tr>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>Gender</th>
+                                    <th>FatherName</th>
+                                    <th class="text-right">Mobile</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let students of fourthStudents;let i=index">
                                     <td class="text-center">{{i+1}}</td>
-                                        <td>{{students.name}}</td>
-                                        <td>{{students.gender}}</td>
-                                        <td>{{students.fathername}}</td>
-                                        <td class="text-right">{{students.mobilenumber}}</td>
+                                    <td>{{students.name}}</td>
+                                    <td>{{students.gender}}</td>
+                                    <td>{{students.fathername}}</td>
+                                    <td class="text-right">{{students.mobilenumber}}</td>
                                     <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
-                                            <i class="material-icons">edit</i>
-                                        </button>
+                                        <a routerLink='/app/editstudent/{{students._id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </a>
                                         <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
                                             <i class="material-icons">close</i>
                                         </button>
@@ -345,26 +363,28 @@
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
-                                    <tr>
-                                            <th class="text-center">#</th>
-                                            <th>Name</th>
-                                            <th>Gender</th>
-                                            <th>FatherName</th>
-                                            <th class="text-right">Mobile</th>
-                                            <th class="text-right">Actions</th>
-                                        </tr>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>Gender</th>
+                                    <th>FatherName</th>
+                                    <th class="text-right">Mobile</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let students of thirdStudents;let i=index">
                                     <td class="text-center">{{i+1}}</td>
-                                        <td>{{students.name}}</td>
-                                        <td>{{students.gender}}</td>
-                                        <td>{{students.fathername}}</td>
-                                        <td class="text-right">{{students.mobilenumber}}</td>
+                                    <td>{{students.name}}</td>
+                                    <td>{{students.gender}}</td>
+                                    <td>{{students.fathername}}</td>
+                                    <td class="text-right">{{students.mobilenumber}}</td>
                                     <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
-                                            <i class="material-icons">edit</i>
-                                        </button>
+                                        <a routerLink='/app/editstudent/{{students._id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </a>
                                         <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
                                             <i class="material-icons">close</i>
                                         </button>
@@ -378,26 +398,28 @@
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
-                                    <tr>
-                                            <th class="text-center">#</th>
-                                            <th>Name</th>
-                                            <th>Gender</th>
-                                            <th>FatherName</th>
-                                            <th class="text-right">Mobile</th>
-                                            <th class="text-right">Actions</th>
-                                        </tr>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>Gender</th>
+                                    <th>FatherName</th>
+                                    <th class="text-right">Mobile</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let students of secondStudents;let i=index">
                                     <td class="text-center">{{i+1}}</td>
-                                        <td>{{students.name}}</td>
-                                        <td>{{students.gender}}</td>
-                                        <td>{{students.fathername}}</td>
-                                        <td class="text-right">{{students.mobilenumber}}</td>
+                                    <td>{{students.name}}</td>
+                                    <td>{{students.gender}}</td>
+                                    <td>{{students.fathername}}</td>
+                                    <td class="text-right">{{students.mobilenumber}}</td>
                                     <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
-                                            <i class="material-icons">edit</i>
-                                        </button>
+                                        <a routerLink='/app/editstudent/{{students._id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </a>
                                         <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
                                             <i class="material-icons">close</i>
                                         </button>
@@ -411,26 +433,28 @@
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
-                                    <tr>
-                                            <th class="text-center">#</th>
-                                            <th>Name</th>
-                                            <th>Gender</th>
-                                            <th>FatherName</th>
-                                            <th class="text-right">Mobile</th>
-                                            <th class="text-right">Actions</th>
-                                        </tr>
+                                <tr>
+                                    <th class="text-center">#</th>
+                                    <th>Name</th>
+                                    <th>Gender</th>
+                                    <th>FatherName</th>
+                                    <th class="text-right">Mobile</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let students of firstStudents;let i=index">
                                     <td class="text-center">{{i+1}}</td>
-                                        <td>{{students.name}}</td>
-                                        <td>{{students.gender}}</td>
-                                        <td>{{students.fathername}}</td>
-                                        <td class="text-right">{{students.mobilenumber}}</td>
+                                    <td>{{students.name}}</td>
+                                    <td>{{students.gender}}</td>
+                                    <td>{{students.fathername}}</td>
+                                    <td class="text-right">{{students.mobilenumber}}</td>
                                     <td class="td-actions text-right">
-                                        <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
-                                            <i class="material-icons">edit</i>
-                                        </button>
+                                        <a routerLink='/app/editstudent/{{students._id}}'>
+                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                <i class="material-icons">edit</i>
+                                            </button>
+                                        </a>
                                         <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
                                             <i class="material-icons">close</i>
                                         </button>
