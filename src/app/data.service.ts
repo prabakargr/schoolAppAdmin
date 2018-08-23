@@ -11,7 +11,7 @@ export class DataService {
   allteachers:any;
   updatedStudent:any;
 
-  baseURL='https://nameless-falls-83481.herokuapp.com'
+  baseURL='https://gentle-fortress-79054.herokuapp.com'
   // baseURL='http://localhost:4000'
 
   constructor(public http:Http) { }
